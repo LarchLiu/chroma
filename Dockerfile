@@ -28,8 +28,6 @@ ENV ALLOW_EMPTY_PASSWORD=yes
 ENV CLICKHOUSE_TCP_PORT=9000
 ENV CLICKHOUSE_HTTP_PORT=8123
 
-RUN mkdir /index_data
-VOLUME /index_data
 EXPOSE 8000
 
 CMD ["/chroma/docker_entrypoint.sh"]
