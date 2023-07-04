@@ -19,7 +19,7 @@ WORKDIR /chroma
 COPY --from=builder /usr/local /usr/local
 COPY --from=builder /install /usr/local
 COPY ./ /chroma
-COPY ./bin/docker_entrypoint_mix.sh /chroma/docker_entrypoint.sh
+COPY ./bin/docker_entrypoint.sh /docker-entrypoint-initdb.d/chromadb_entrypoint.sh
 
 ENV CHROMA_DB_IMPL=clickhouse
 ENV CLICKHOUSE_HOST=localhost
@@ -30,4 +30,4 @@ ENV CLICKHOUSE_HTTP_PORT=8123
 
 EXPOSE 8000
 
-CMD ["/chroma/docker_entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]

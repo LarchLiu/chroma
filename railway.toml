@@ -1,2 +1,2 @@
 [deploy]
-startCommand = "/chroma/docker_entrypoint.sh"
+startCommand = "/entrypoint.sh"
