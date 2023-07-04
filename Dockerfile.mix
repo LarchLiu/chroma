@@ -18,7 +18,7 @@ WORKDIR /chroma
 
 COPY --from=builder /usr/local /usr/local
 COPY --from=builder /install /usr/local
-COPY ./bin/docker_entrypoint.sh /chroma/docker_entrypoint.sh
+COPY ./bin/docker_entrypoint_mix.sh /chroma/docker_entrypoint.sh
 COPY ./ /chroma
 
 ENV CHROMA_DB_IMPL=clickhouse
